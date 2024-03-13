@@ -31,5 +31,5 @@ Email: john@example.com
 
 
 ## Contributors
-- John Doe (@johndoe)
-- Jane Smith (@janesmith)
+- Daniel Godfred Junior (@Ntidaniel)
+
