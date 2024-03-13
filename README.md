@@ -9,3 +9,27 @@ The command interpreter is a Python script (`console.py`) that provides an inter
 ## How to Start
 To start the command interpreter, simply run the `console.py` script using Python 3:
 
+
+## How to Use
+Once the command interpreter is running, you can enter commands to manage AirBnB objects. Here are some example commands:
+
+- `create User`: Create a new user.
+- `show Listing 123`: Show details of listing with ID 123.
+- `update Booking 456 start_date "2024-03-15"`: Update the start date of booking 456.
+
+## Examples
+Here are some examples of using the command interpreter:
+
+(hbnb) create User
+User created with ID: 1
+(hbnb) show User 1
+Details of User with ID 1:
+
+Name: John Doe
+Email: john@example.com
+(hbnb) quit
+
+
+## Contributors
+- John Doe (@johndoe)
+- Jane Smith (@janesmith)
