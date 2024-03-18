@@ -12,7 +12,11 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel, saves it to the JSON file, and prints the id"""
+        """Creates a new instance of BaseModel, saves it to the JSON file, and prints the id
+        
+        Usage: create <class_name>
+        Example: create State
+        """
         if not arg:
             print("** class name missing **")
             return
@@ -26,7 +30,11 @@ class HBNBCommand(cmd.Cmd):
         print(new_instance.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an instance based on the class name and id"""
+        """Prints the string representation of an instance based on the class name and id
+        
+        Usage: show <class_name> <object_id>
+        Example: show State 1234-5678-9012
+        """
         if not arg:
             print("** class name missing **")
             return
@@ -46,7 +54,11 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_destroy(self, arg):
-        """Deletes an instance based on the class name and id"""
+        """Deletes an instance based on the class name and id
+        
+        Usage: destroy <class_name> <object_id>
+        Example: destroy City 9876-5432-1098
+        """
         if not arg:
             print("** class name missing **")
             return
@@ -67,7 +79,11 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
-        """Prints all string representation of all instances based or not on the class name"""
+        """Prints all string representation of all instances based or not on the class name
+        
+        Usage: all [class_name]
+        Example: all or all State
+        """
         arg_list = arg.split()
         if arg_list and arg_list[0] not in ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]:
             print("** class doesn't exist **")
@@ -75,7 +91,11 @@ class HBNBCommand(cmd.Cmd):
         print([str(obj) for obj in storage.all().values() if not arg_list or obj.__class__.__name__ == arg_list[0]])
 
     def do_update(self, arg):
-        """Updates an instance based on the class name and id by adding or updating attribute"""
+        """Updates an instance based on the class name and id by adding or updating attribute
+        
+        Usage: update <class_name> <object_id> <attribute_name> "<attribute_value>"
+        Example: update User 1234-5678-9012 email "example@example.com"
+        """
         if not arg:
             print("** class name missing **")
             return
@@ -103,12 +123,18 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_EOF(self, arg):
-        """Exits the console"""
+        """Exits the console
+        
+        Usage: Press Ctrl+D
+        """
         print("")
         return True
 
     def do_quit(self, arg):
-        """Exits the console"""
+        """Exits the console
+        
+        Usage: quit
+        """
         return True
 
     def emptyline(self):
